@@ -42,7 +42,7 @@ A Python utility that converts your Pocket HTML export into a CSV file suitable 
     python3 'Pocket to Omnivore Parser.py'
     ```
 
-3. Find the generated CSV file in the `output` directory, ready for import into Omnivore.
+3. Find the generated output.csv file in the same directory, ready for import into Omnivore.
 
 ## Contributing 🤝
 
