@@ -45,6 +45,14 @@ for h1_tag in h1_tags:
                 row[column] = value
         csv_data.append(row)
 
+# Pad last two columns to 13 digits (Unix timestamp in millisecond format)
+for row in csv_data:
+    last_two_keys = list(row.keys())[-2:]
+    for key in last_two_keys:
+        # Check if the key exists.
+        if row[key]:
+            row[key] = row[key].ljust(13, '0')
+
 # Create the CSV file
 csv_file_path = 'output.csv'
 with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
@@ -55,4 +63,3 @@ with open(csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
     writer.writeheader()
     for row in csv_data:
         writer.writerow(row)
-    
